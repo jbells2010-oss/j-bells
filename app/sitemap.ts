@@ -1,18 +1,13 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '../lib/site';
 import { blogPosts } from '../lib/blog';
 
-// Public site origin used as the base for every URL in the sitemap.
-// Override at deploy time via NEXT_PUBLIC_SITE_URL (e.g. on Vercel).
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
-  'https://jbells.in';
-
+// Top-level static routes. `changeFrequency` and `priority` follow Google's
+// general guidance: the homepage gets the highest priority, deep content
+// pages sit a step below, and utility pages (contact) a step lower again.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Top-level static routes. `changeFrequency` and `priority` follow Google's
-  // general guidance: the homepage gets the highest priority, deep content
-  // pages sit a step below, and utility pages (contact) a step lower again.
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/`,
