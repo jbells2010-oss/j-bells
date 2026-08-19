@@ -4,17 +4,17 @@ import { serviceOptions } from '../lib/business';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
-const idleNote = "We'll respond within one business day. By submitting you agree to be contacted about your enquiry.";
+const idleNote = "By submitting you agree to be contacted about your enquiry.";
 
 const fieldErrorMessage: Record<string, string> = {
-  name: 'Please enter your name.',
-  phone: 'Please enter a valid phone number.',
-  email: 'Please enter a valid email address.',
-  service: 'Please choose a service.',
-  message: 'Please share a short message about your device.',
+  name: 'Please add your name.',
+  phone: 'Please add a phone number we can call back on.',
+  email: 'Please add a valid email address.',
+  service: 'Please pick the service you need.',
+  message: 'Please tell us a little about the phone or the problem.',
 };
 
-const generalErrorMessage = 'Sorry — we could not send your enquiry right now. Please try again, or reach us by phone or WhatsApp.';
+const generalErrorMessage = 'Something went wrong sending your message. Please try again, or call / WhatsApp us directly.';
 
 export function EnquiryForm() {
   const [status, setStatus] = useState<Status>('idle');
@@ -34,7 +34,7 @@ export function EnquiryForm() {
     };
 
     setStatus('sending');
-    setErrorMessage('Sending your enquiry…');
+    setErrorMessage('Sending your message…');
 
     try {
       const response = await fetch('/api/contact', {
@@ -56,7 +56,7 @@ export function EnquiryForm() {
       }
       form.reset();
       setStatus('sent');
-      setErrorMessage('Thanks — we received your enquiry and will be in touch shortly.');
+      setErrorMessage('Thanks — got it. We will get back to you shortly.');
     } catch {
       setErrorMessage(generalErrorMessage);
       setStatus('error');
@@ -67,8 +67,8 @@ export function EnquiryForm() {
     <div className="form-row"><label>Name<input name="name" type="text" placeholder="Your name" required /></label><label>Phone<input name="phone" type="tel" placeholder="Your phone number" required /></label></div>
     <label>Email<input name="email" type="email" placeholder="you@example.com" required /></label>
     <label>Service Required<select name="service" defaultValue="" required><option value="" disabled>Select a service</option>{serviceOptions.map((service) => <option key={service}>{service}</option>)}</select></label>
-    <label>Message<textarea name="message" rows={5} placeholder="Tell us a little about your device or repair need" required /></label>
-    <button className="button" type="submit" disabled={status === 'sending'}>Send Enquiry <span className="line-icon" aria-hidden="true">↗</span></button>
+    <label>Message<textarea name="message" rows={5} placeholder="Tell us what is wrong with the phone" required /></label>
+    <button className="button" type="submit" disabled={status === 'sending'}>Send Message <span className="line-icon" aria-hidden="true">↗</span></button>
     <p className="form-note" aria-live="polite">{errorMessage}</p>
   </form>;
 }

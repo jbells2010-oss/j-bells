@@ -254,7 +254,7 @@ export function SmartphoneScrollAnimation({ progressRef, onProgress }: Props) {
           aria-label="Scroll-controlled smartphone disassembly animation"
           role="img"
         />
-        <p className="phone-fallback">Scroll to explore the phone&apos;s internal precision.</p>
+        <p className="phone-fallback">Scroll to see how we open a phone.</p>
       </div>
     </div>
   );

@@ -22,17 +22,19 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
   const post = findPost(params.slug);
   if (!post) {
     return {
-      title: 'Article Not Found | J Bells Service Center',
+      title: 'Article Not Found | J Bells Smart Phone Service Center',
       description: 'The article you are looking for could not be found.',
     };
   }
   return {
-    title: `${post.title} | J Bells Service Center`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
+      url: `/blog/${post.slug}`,
     },
   };
 }
@@ -344,7 +346,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div className="blog-post-cta">
             <Link className="button" href="/contact">
-              Contact J Bells <LineIcon name="arrowUpRight" />
+              Talk to Us <LineIcon name="arrowUpRight" />
             </Link>
             <Link className="text-link" href="/services">
               View All Services <LineIcon name="arrowRight" />
@@ -364,7 +366,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </Reveal>
           <Reveal delay={180}>
             <p className="lede">
-              Our technicians in Trivandrum provide thorough diagnosis, display replacement, battery servicing and hardware repair.
+              Our team in Trivandrum handles diagnosis, display replacement, battery servicing and hardware repair.
             </p>
           </Reveal>
           <Reveal delay={240}>

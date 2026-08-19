@@ -5,16 +5,17 @@ import { LineIcon } from './LineIcon';
 import { businessContact } from '../lib/business';
 
 import { trackEvent } from '../lib/analytics';
+import { isoCertification } from '../lib/business';
 
 export function BrandLogo() {
-  return <Image className="brand-logo" src="/android-chrome-192x192.png" alt="J Bells Service Center" width={192} height={192} priority />;
+  return <Image className="brand-logo" src="/android-chrome-192x192.png" alt="J Bells Smart Phone Service Center" width={192} height={192} priority />;
 }
 
 export function SiteNav({ active }: { active?: 'home' | 'services' | 'about' | 'blog' | 'contact' }) {
   const [open, setOpen] = useState(false);
   return (
     <nav className="nav">
-      <a className="brand" href="/" aria-label="J Bells Service Center home">
+      <a className="brand" href="/" aria-label="J Bells Smart Phone Service Center home">
         <BrandLogo />
         <span className="brand-name">J BELLS</span>
       </a>
@@ -68,8 +69,13 @@ export function SiteFooter() {
     <div><small className="footer-heading">WHATSAPP</small><div className="footer-links"><a href={businessContact.whatsapp.href} target="_blank" rel="noreferrer">{businessContact.whatsapp.display}</a></div></div>
     <div><small className="footer-heading">INSTAGRAM</small><div className="footer-links"><a href={businessContact.instagram.href} target="_blank" rel="noreferrer">{businessContact.instagram.handle}</a></div></div>
     <div><small className="footer-heading">YOUTUBE</small><div className="footer-links"><a href={businessContact.youtube.href} target="_blank" rel="noreferrer">{businessContact.youtube.handle}</a></div></div>
-    <div><small className="footer-heading">LOCATIONS</small><div className="footer-links"><a href="https://maps.app.goo.gl/ezLs9QCEB5pfHchK6" target="_blank" rel="noreferrer">J.BELLS · Location 1</a><a href="https://maps.app.goo.gl/iwPGkCkKoWbjHjP38" target="_blank" rel="noreferrer">J.Bells · Location 2</a></div></div>
-    <small className="footer-copy">Copyright 2026 J Bells Service Center. All rights reserved.</small>
+    <div><small className="footer-heading">LOCATIONS</small><div className="footer-links"><a href="https://maps.app.goo.gl/ezLs9QCEB5pfHchK6" target="_blank" rel="noreferrer">J Bells · Location 1</a><a href="https://maps.app.goo.gl/iwPGkCkKoWbjHjP38" target="_blank" rel="noreferrer">J Bells · Location 2</a></div></div>
+    <small className="footer-copy">
+      Certified to {isoCertification.standard} · Quality Management System · Scope: {isoCertification.scope}.
+    </small>
+    <small className="footer-meta">
+      Copyright 2026 J Bells Smart Phone Service Center. All rights reserved.
+    </small>
   </footer>;
 }
 

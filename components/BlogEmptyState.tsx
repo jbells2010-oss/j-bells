@@ -15,13 +15,13 @@ const upcomingTopics = [
     icon: 'smartphone' as const,
   },
   {
-    title: 'Diagnostic Insights',
-    desc: 'Understanding root causes behind hardware failures.',
+    title: 'Common Phone Problems',
+    desc: 'What we see at the counter most weeks.',
     icon: 'scan' as const,
   },
   {
-    title: 'Device Care Protocols',
-    desc: 'Safe cleaning and everyday maintenance practices.',
+    title: 'Phone Care Basics',
+    desc: 'Simple habits that keep a phone working longer.',
     icon: 'shield' as const,
   },
 ];

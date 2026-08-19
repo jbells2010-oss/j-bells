@@ -39,3 +39,18 @@ export const whatsappLink = (message?: string) =>
   message
     ? `https://wa.me/917356365686?text=${encodeURIComponent(message)}`
     : 'https://wa.me/917356365686';
+
+// ISO 9001:2015 certification — single source of truth so the About page,
+// metadata and any future copy pull from the same place.
+export const isoCertification = {
+  standard: 'ISO 9001:2015',
+  managementSystem: 'Quality Management System',
+  scope: 'Provision of Smart Phone Service Center',
+  certifyingBody: 'QRO (Quality Research Organization)',
+  certificateNumber: '305026072145Q',
+  certifiedOn: '21 July 2026',
+  firstSurveillanceDue: '20 July 2027',
+  secondSurveillanceDue: '20 July 2028',
+  validUntil: '20 July 2029',
+  location: 'MurukumPuzha, Thiruvananthapuram, PIN-695302, India',
+} as const;

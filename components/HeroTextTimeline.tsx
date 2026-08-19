@@ -16,10 +16,10 @@ type Scene = {
 };
 
 const scenes: Scene[] = [
-  { title: <>Your Phone.<br/><em>Our Expertise.</em></>, detail: 'Professional smartphone servicing, handled with precision.', start: 0, inEnd: .03, outStart: .22, end: .30 },
-  { title: <>Precision<br/><em>Inside Every Repair.</em></>, start: .30, inEnd: .38, outStart: .45, end: .52 },
-  { title: <>Every Component<br/><em>Matters.</em></>, start: .52, inEnd: .60, outStart: .70, end: .77 },
-  { title: <>Built Around<br/><em>Better Repairs.</em></>, detail: 'ISO CERTIFIED SERVICE CENTER', start: .77, inEnd: .85, outStart: .92, end: .97 },
+  { title: <>Your Phone.<br/><em>Our Repair Bench.</em></>, detail: 'Smartphone servicing in Trivandrum.', start: 0, inEnd: .03, outStart: .22, end: .30 },
+  { title: <>Cracked Screen?<br/><em>We Open It Up.</em></>, start: .30, inEnd: .38, outStart: .45, end: .52 },
+  { title: <>Charging Port.<br/><em>Battery. Camera.</em></>, start: .52, inEnd: .60, outStart: .70, end: .77 },
+  { title: <>Walk In.<br/><em>Ask About the Repair.</em></>, detail: 'ISO 9001:2015 CERTIFIED', start: .77, inEnd: .85, outStart: .92, end: .97 },
   { title: <>J BELLS SMART PHONE SERVICE CENTER</>, start: .96, inEnd: 1, outStart: 1.1, end: 1.1, brand: true },
 ];
 
@@ -69,7 +69,7 @@ export const HeroTextTimeline = forwardRef<HeroTextTimelineHandle, { progress?: 
             >
               <h2>{scene.title}</h2>
               {scene.detail && <p>{scene.detail}</p>}
-              {index === 0 && <p className="timeline-credibility">ISO CERTIFIED SERVICE CENTER</p>}
+              {index === 0 && <p className="timeline-credibility">ISO 9001:2015 CERTIFIED</p>}
             </div>
           );
         })}

@@ -9,10 +9,11 @@ import { blogPosts } from '../../lib/blog';
 
 export const metadata: Metadata = {
   title: 'J.BELLS Journal | Smartphone Repair & Care',
-  description: 'A future home for smartphone repair guides, device-care tips, and practical mobile advice from J.Bells Smart Phone Service Centre.',
+  description: 'Smartphone repair guides, device-care tips and notes from the J.Bells service bench in Trivandrum.',
+  alternates: { canonical: '/blog' },
   openGraph: {
     title: 'J.BELLS Journal | Smartphone Repair & Care',
-    description: 'A future home for smartphone repair guides, device-care tips, and practical mobile advice from J.Bells Smart Phone Service Centre.',
+    description: 'Smartphone repair guides, device-care tips and notes from the J.Bells service bench in Trivandrum.',
     type: 'website',
   },
 };
@@ -27,14 +28,14 @@ export default function BlogPage() {
         </Reveal>
         <Reveal delay={80}>
           <h1>
-            Phone Care.<br />
-            <span>Repair Tips.</span><br />
+            Notes from<br />
+            <span>the repair bench.</span><br />
             Useful Things to Know.
           </h1>
         </Reveal>
         <Reveal delay={160}>
           <p className="lede">
-            Practical information from the world of smartphones, repairs and everyday device care.
+            Repair guides, device-care tips and the occasional honest answer, written from our Trivandrum service counter.
           </p>
         </Reveal>
       </section>
@@ -65,7 +66,7 @@ export default function BlogPage() {
         </Reveal>
         <Reveal delay={180}>
           <p className="lede">
-            Our technicians in Chennai provide thorough diagnosis, display replacement, battery servicing and hardware repair.
+            Our team in Trivandrum handles diagnosis, display, battery and hardware repairs — drop in or message us first.
           </p>
         </Reveal>
         <Reveal delay={240}>
